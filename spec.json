@@ -92,7 +92,6 @@
         },
         "equipment": {
         "type": "array",
-        "properties":{
           "devices": 
             {
               "name":{
@@ -104,9 +103,7 @@
               "id":{
                 "type": "integer",
                 "format": "int64"
-            }
-            }
-          
+            }  
         }
       }
     }
