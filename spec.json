@@ -58,7 +58,7 @@
           ],
           "responses": {
             "200": {
-
+                "description": "success"
               },
             "405": {
               "description": "Invalid input"
@@ -91,7 +91,7 @@
             "format": "int64"
         },
         "equipment": {
-        "type": "object",
+        "type": "array",
         "properties":{
           "devices": [
             {
