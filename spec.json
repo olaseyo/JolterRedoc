@@ -76,9 +76,11 @@
             "format": "int64"
         },
         "equipment": {
-        "type": "array",
+        "type": "object",
         "properties":{
           "devices":{
+            "type": "object",
+            "properties":{
               "name":{
                 "type": "string"
             },
@@ -90,6 +92,7 @@
                 "format": "int64"
             }
             }
+        }
         }
       }
     }
