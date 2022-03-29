@@ -1,9 +1,9 @@
 {
     "swagger": "2.0",
     "info": {
-      "description": "This is a sample server Petstore server.  You can find out more about Swagger at [http://swagger.io](http://swagger.io) or on [irc.freenode.net, #swagger](http://swagger.io/irc/).  For this sample, you can use the api key `special-key` to test the authorization filters.",
+      "description": "",
       "version": "1.0.6",
-      "title": "Swagger Petstore",
+      "title": "Swagger Jolter",
       "termsOfService": "http://swagger.io/terms/",
       "contact": {
         "email": "apiteam@swagger.io"
@@ -13,8 +13,8 @@
         "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
       }
     },
-    "host": "petstore.swagger.io",
-    "basePath": "/v2",
+    "host": "localhost:8085",
+    "basePath": "/",
     "tags": [
       {
         "name": "JOlter ambra",
@@ -63,31 +63,7 @@
             "405": {
               "description": "Invalid input"
             }
-          },
-          "security": [
-            {
-              "petstore_auth": [
-                "write:pets",
-                "read:pets"
-              ]
-            }
-          ]
-        }
-      }
-    },
-    "securityDefinitions": {
-      "api_key": {
-        "type": "apiKey",
-        "name": "api_key",
-        "in": "header"
-      },
-      "petstore_auth": {
-        "type": "oauth2",
-        "authorizationUrl": "https://petstore.swagger.io/oauth/authorize",
-        "flow": "implicit",
-        "scopes": {
-          "read:pets": "read your pets",
-          "write:pets": "modify pets in your account"
+          }
         }
       }
     },
