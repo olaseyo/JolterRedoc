@@ -91,8 +91,9 @@
             "format": "int64"
         },
         "equipment": {
-        "type": "array",
-          "devices": 
+        "type": "object",
+        "properties":{
+          "devices": [
             {
               "name":{
                 "type": "string"
@@ -103,7 +104,9 @@
               "id":{
                 "type": "integer",
                 "format": "int64"
-            }  
+            }
+            }
+          ]
         }
       }
     }
