@@ -68,21 +68,6 @@
       }
     },
     "definitions": {
-      "ApiResponse": {
-        "type": "object",
-        "properties": {
-          "code": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "type": {
-            "type": "string"
-          },
-          "message": {
-            "type": "string"
-          }
-        }
-      },
       "Equipment":{
       "type": "object",
       "properties":{
@@ -91,7 +76,7 @@
             "format": "int64"
         },
         "equipment": {
-        "type": "object",
+        "type": "array",
         "properties":{
           "devices": [
             {
