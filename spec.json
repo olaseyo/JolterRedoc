@@ -79,7 +79,7 @@
         "type": "object",
         "properties":{
           "devices":{
-            "type": "object",
+            "type": "array",
             "properties":{
               "name":{
                 "type": "string"
