@@ -1,101 +1,131 @@
 {
-    "swagger": "2.0",
-    "info": {
-      "description": "",
-      "version": "1.0",
-      "title": "Jolter",
-      "license": {
-        "name": "Apache 2.0",
-        "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+  "swagger": "2.0",
+  "info": {
+    "description": "",
+    "version": "1.0",
+    "title": "Jolter",
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "host": "localhost:8085",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "JOlter ambra",
+      "description": "Everything about Jolter API",
+      "externalDocs": {
+        "description": "Find out more",
+        "url": "http://swagger.io"
       }
-    },
-    "host": "localhost:8085",
-    "basePath": "/",
-    "tags": [
-      {
-        "name": "JOlter ambra",
-        "description": "Everything about Jolter API",
-        "externalDocs": {
-          "description": "Find out more",
-          "url": "http://swagger.io"
-        }
-      }
-    ],
-    "schemes": [
-      "https",
-      "http"
-    ],
-    "paths": {
-     
-      "/json/pacs/calendar/equipment/create": {
-        "post": {
-          "tags": [
-            "Equipment"
-          ],
-          "summary": "Create calendar equipment",
-          "description": "",
-          "operationId": "addEqupment",
-          "consumes": [
-            "application/json"
-          ],
-          "produces": [
-            "application/json"
-          ],
-          "parameters": [
-            {
-              "in": "body",
-              "name": "body",
-              "description": "Equipment object that needs to be added",
-              "required": true,
-              "schema": {
-                "$ref": "#/definitions/Equipment"
-              }
+    }
+  ],
+  "schemes": [
+    "https",
+    "http"
+  ],
+  "paths": {
+   
+    "/json/pacs/calendar/equipment/create": {
+      "post": {
+        "tags": [
+          "Equipment"
+        ],
+        "summary": "Create calendar equipment",
+        "description": "",
+        "operationId": "addEqupment",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Equipment object that needs to be added",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Equipment"
             }
-          ],
-          "responses": {
-            "200": {
-                "description": "success"
-              },
-            "405": {
-              "description": "Invalid input"
-            }
+          }
+        ],
+        "responses": {
+          "200": {
+              "description": "success"
+            },
+          "404": {
+            "description": "Failed operation"
           }
         }
       }
     },
-    "definitions": {
-      "Equipment":{
-      "type": "object",
-      "properties":{
-        "event_id":{
+    "/json/event-scheduling?event_id": {
+      "get": {
+        "summary": "Get event schedule",
+        "description": "",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "event_id",
+            "in": "path",
+            "description": "ID of event to get",
+            "required": true,
             "type": "integer",
             "format": "int64"
-        },
-        "equipment": {
-        "type": "object",
-        "properties":{
-          "devices":{
-            "type": "array",
-            "properties":{
-              "name":{
-                "type": "string"
-            },
-              "size":{
-                "type": "string"
-            },
-              "id":{
-                "type": "integer",
-                "format": "int64"
-            }
-            }
-        }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "404": {
+            "description": "No event found"
+          }
         }
       }
     }
-    }
+  },
+  "definitions": {
+    "Equipment":{
+    "type": "object",
+    "properties":{
+      "event_id":{
+          "type": "integer",
+          "format": "int64"
+      },
+      "equipment": {
+      "type": "object",
+      "properties":{
+        "devices":{
+          "type": "array",
+          "properties":{
+            "name":{
+              "type": "string"
           },
-    "externalDocs": {
-      "description": "Find out more about Swagger",
-      "url": "http://swagger.io"
+            "size":{
+              "type": "string"
+          },
+            "id":{
+              "type": "integer",
+              "format": "int64"
+          }
+          }
+      }
+      }
     }
   }
+  }
+        },
+  "externalDocs": {
+    "description": "Find out more about Swagger",
+    "url": "http://swagger.io"
+  }
+}
