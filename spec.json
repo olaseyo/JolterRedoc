@@ -255,56 +255,120 @@
   "ScheduleResponse":{
     "type": "object",
     "properties":{
-        "event": [
+        "event":
             {
-                "event_id": 2329654,
-                "universal_id": "W7K47",
-                "start": "2022-03-28T15:45:00Z",
-                "end": "2022-03-28T16:00:00Z",
-                "case": "Anterior Left Total Hip Replacement",
-                "procedure": "Hip",
-                "orientation": "Left",
-                "details": "",
-                "status": "Pending",
-                "laterality": "Uni-lateral",
-                "location": {
-                    "ahaid": 5,
-                    "name": "PSC"
+              "type": "object",
+            "properties":{
+                "event_id":{
+                  "type":"integer"
                 },
-                "physicians": [
-                    {
-                        "npi": "",
-                        "name": "Luca Santarella"
+                "universal_id":{
+                  "type":"string"
+                },
+                "start":{
+                  "type":"string"
+                },
+                "end":{
+                  "type":"string"
+                },
+                "case":{
+                  "type":"string"
+                },
+                "procedure":{
+                  "type":"string"
+                },
+                "orientation":{
+                  "type":"string"
+                },
+                "details":{
+                  "type":"string"
+                },
+                "status":{
+                  "type":"string"
+                },
+                "laterality":{
+                  "type":"string"
+                },
+                "location": {
+                  "type":"object",
+                  "properties":{
+                    "ahaid":{
+                      "type":"string"
+                    },
+                    "name":{
+                      "type":"string"
                     }
-                ],
+                  }   
+                },
+                "physicians":{
+                  "type":"object",
+                  "properties":{
+                        "npi":{
+                          "type":"string"
+                        },
+                        "name":{
+                          "type":"string"
+                        }
+                    }
+                  },
                 "reps": [],
                 "patient": {
-                    "mrn": "",
-                    "initials": "K.D.",
-                    "name": ""
+                  "type":"object",
+                  "properties":{
+                    "mrn":{
+                      "type":"string"
+                    },
+                    "initials":{
+                      "type":"string"
+                    },
+                    "name":{
+                      "type":"string"
+                    }
+                  }
                 },
                 "demographics": {
-                    "gender": "Unknown",
-                    "age": 29,
-                    "height": 0,
-                    "weight": 0
+                  "type":"object",
+                  "properties":{
+                    "gender":{
+                      "type":"string"
+                    },
+                    "age":{
+                      "type":"integer"
+                    },
+                    "height":{
+                      "type":"number",
+                      "format":"double"
+                    },
+                    "weight":{
+                      "type":"integer"
+                    }
+                  }
                 },
                 "equipment": {
-                    "devices": [
-                        {
-                            "name": "Needle"
-                        },
-                        {
-                            "name": "Tecno"
+                  "type":"object",
+                  "properties":{
+                    "devices":{ 
+                    "type":"array",
+                    "properties":{
+                            "name":{
+                              "type":"string"
+                            }
                         }
-                    ],
-                    "planned": null,
-                    "actual": null
+                  }
+                  },
+                    "planned":{
+                      "type":"string"
+                    },
+                    "actual":{
+                      "type":"string"
+                    }
                 },
-                "templated": 0,
+                "templated":{
+                  "type":"integer"
+                },
                 "study": []
             }
-        ]
+          }
   }
   }
         },
