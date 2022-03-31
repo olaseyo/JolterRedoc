@@ -13,7 +13,7 @@
   "basePath": "/",
   "tags": [
     {
-      "name": "JOlter ambra",
+      "name": "Jolter ambra",
       "description": "Everything about Jolter API",
       "externalDocs": {
         "description": "Find out more",
@@ -147,6 +147,65 @@
             "in": "path",
             "description": "cancelled status of the event to get",
             "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "404": {
+            "description": "No event found"
+          }
+        }
+      }
+    },
+    "/json/pacs/retrieve/failure/run": {
+      "get": {
+        "tags": [
+          "PACS"
+        ],
+        "summary": "Study Process Failure Cron",
+        "description": "",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "404": {
+            "description": "No event found"
+          }
+        }
+      }
+    },
+    "/json/pacs/receive/study": {
+      "post": {
+        "tags": [
+          "PACS"
+        ],
+        "summary": " ",
+        "description": "",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+
+          {
+            "name": "StudyUUID",
+            "in": "body",
+            "description": "StudyUUID of event to get",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
           }
         ],
         "responses": {
