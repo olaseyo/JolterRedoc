@@ -201,7 +201,6 @@
           "application/json"
         ],
         "parameters": [
-
           {
             "name": "StudyUUID",
             "in": "body",
