@@ -62,7 +62,7 @@
         }
       }
     },
-    "/json/event-scheduling?event_id": {
+    "/json/event-scheduling?event_id=&time_frame=&overview": {
       "get": {
         "summary": "Get event schedule",
         "description": "",
@@ -80,6 +80,67 @@
             "required": true,
             "type": "integer",
             "format": "int64"
+          },
+          {
+            "name": "time_frame",
+            "in": "path",
+            "description": "time frame event to get",
+            "type": "string"
+          },
+          {
+            "name": "overview",
+            "in": "path",
+            "description": "ID of event to get",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "404": {
+            "description": "No event found"
+          }
+        }
+      }
+    },
+    "/json/event-scheduling/run?event_id=&time_frame=&attachments=&cancelled=": {
+      "get": {
+        "summary": "Get event schedule",
+        "description": "",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+
+          {
+            "name": "event_id",
+            "in": "path",
+            "description": "ID of event to get",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "time_frame",
+            "in": "path",
+            "description": "time_frame of the event to get",
+            "type": "string"
+          },
+          {
+            "name": "attachments",
+            "in": "path",
+            "description": "attachments of the event to get",
+            "type": "string"
+          },
+          {
+            "name": "cancelled",
+            "in": "path",
+            "description": "cancelled status of the event to get",
+            "type": "string"
           }
         ],
         "responses": {
