@@ -64,6 +64,9 @@
     },
     "/json/event-scheduling?event_id=&time_frame=&overview": {
       "get": {
+        "tags": [
+          "Event"
+        ],
         "summary": "Get event schedule",
         "description": "",
         "consumes": [
@@ -106,6 +109,9 @@
     },
     "/json/event-scheduling/run?event_id=&time_frame=&attachments=&cancelled=": {
       "get": {
+        "tags": [
+          "Event"
+        ],
         "summary": "Get event schedule",
         "description": "",
         "consumes": [
