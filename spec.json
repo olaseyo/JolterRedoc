@@ -210,6 +210,9 @@
             "type": "integer",
             "format": "int64",
             "schema": {
+              "StudyUUID":{
+                "type":"integer"
+              }
             }
           }
         ],
