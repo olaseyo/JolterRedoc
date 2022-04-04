@@ -4,6 +4,11 @@
     "description": "",
     "version": "1.0",
     "title": "Jolter",
+    "x-logo": {
+      "url": "https://docspera.com/assets/D3/pic/Logo-Full-White-Padded.png",
+      "backgroundColor": "rgb(0, 150, 250)",
+      "altText": "Docspera Logo"
+    }
     "license": {
       "name": "Apache 2.0",
       "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
