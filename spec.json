@@ -206,7 +206,6 @@
           "application/json"
         ],
         "parameters": [
-
           {
             "name": "StudyUUID",
             "in": "body",
@@ -227,6 +226,40 @@
           },
           "404": {
             "description": "No event found"
+          }
+        }
+      }
+    },
+    "/external/v1/receive-templated-study": {
+      "post": {
+        "tags": [
+          "PACS"
+        ],
+        "summary": "ReceiveTemplatedStudy",
+        "description": "",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Equipment object that needs to be added",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ReceiveTemplatedStudy"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "staus": "Success"
+          },
+          "400": {
+            "description": "Bad request"
           }
         }
       }
@@ -260,6 +293,70 @@
       }
       }
     }
+  }
+  },
+  "ReceiveTemplatedStudy":{
+    "type": "object",
+    "properties":{
+      "appointment_id":{
+          "type": "integer",
+          "format": "int64"
+      },
+      "part_number_1":{
+        "type": "string"
+    },
+    "part_name_1":{
+      "type": "string"
+  },
+  "part_number_2":{
+    "type": "string"
+},
+"part_name_2":{
+  "type": "string"
+},
+"part_number_3":{
+  "type": "string"
+},
+"part_name_3":{
+"type": "string"
+},
+"part_number_4":{
+  "type": "string"
+},
+"part_name_4":{
+"type": "string"
+},
+"part_number_5":{
+  "type": "string"
+},
+"part_name_5":{
+"type": "string"
+},
+"part_number_6":{
+  "type": "string"
+},
+"part_name_6":{
+"type": "string"
+},
+"part_number_7":{
+  "type": "string"
+},
+"part_name_7":{
+"type": "string"
+},
+"part_number_8":{
+  "type": "string"
+},
+"part_name_8":{
+"type": "string"
+},
+"part_number_9":{
+  "type": "string"
+},
+"part_name_9":{
+"type": "string"
+}
+  
   }
   },
   "ScheduleResponse":{
