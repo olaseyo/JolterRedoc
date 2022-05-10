@@ -281,7 +281,7 @@
           {
             "name": "event_id",
             "in": "path",
-            "description": "ID of event to push",
+            "description": "ID of the event to push",
             "required": true,
             "type": "integer",
             "format": "int64"
