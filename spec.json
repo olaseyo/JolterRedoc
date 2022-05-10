@@ -264,13 +264,13 @@
         }
       }
     },
-    "/grpc/push/encoded_calendar_id": {
+    "/grpc/push/{encoded_calendar_id}": {
       "put": {
         "tags": [
           "PACS"
         ],
-        "summary": "HTTP API to proxy requests to Jolter",
-        "description": "",
+        "summary": "Proxy requests to Jolter",
+        "description": "HTTP Endpoint to proxy requests to Jolter",
         "consumes": [
           "application/json"
         ],
