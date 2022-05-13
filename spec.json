@@ -385,13 +385,6 @@
         },
         "part_name_9": {
           "type": "string"
-        },
-        "templated_study": {
-          "type": "file"
-        },
-        "templated_study_dcm": {
-          "description": "Array of dicom files",
-          "type": "file"
         }
       }
     },
