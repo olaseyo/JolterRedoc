@@ -31,6 +31,7 @@
     "http"
   ],
   "paths": {
+   
     "/json/pacs/calendar/equipment/create": {
       "post": {
         "tags": [
@@ -58,8 +59,8 @@
         ],
         "responses": {
           "200": {
-            "description": "success"
-          },
+              "description": "success"
+            },
           "404": {
             "description": "Failed operation"
           }
@@ -128,6 +129,7 @@
           "application/json"
         ],
         "parameters": [
+
           {
             "name": "event_id",
             "in": "path",
@@ -178,7 +180,8 @@
         "produces": [
           "application/json"
         ],
-        "parameters": [],
+        "parameters": [
+        ],
         "responses": {
           "200": {
             "description": "successful operation"
@@ -211,8 +214,8 @@
             "type": "integer",
             "format": "int64",
             "schema": {
-              "StudyUUID": {
-                "type": "integer"
+              "StudyUUID":{
+                "type":"integer"
               }
             }
           }
@@ -296,229 +299,225 @@
     },
   },
   "definitions": {
-    "Equipment": {
-      "type": "object",
-      "properties": {
-        "event_id": {
+    "Equipment":{
+    "type": "object",
+    "properties":{
+      "event_id":{
           "type": "integer",
           "format": "int64"
-        },
-        "equipment": {
-          "type": "object",
-          "properties": {
-            "devices": {
-              "type": "array",
-              "properties": {
-                "name": {
-                  "type": "string"
-                },
-                "size": {
-                  "type": "string"
-                },
-                "id": {
-                  "type": "integer",
-                  "format": "int64"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "ReceiveTemplatedStudy": {
+      },
+      "equipment": {
       "type": "object",
-      "properties": {
-        "appointment_id": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "part_number_1": {
-          "type": "string"
-        },
-        "part_name_1": {
-          "type": "string"
-        },
-        "part_number_2": {
-          "type": "string"
-        },
-        "part_name_2": {
-          "type": "string"
-        },
-        "part_number_3": {
-          "type": "string"
-        },
-        "part_name_3": {
-          "type": "string"
-        },
-        "part_number_4": {
-          "type": "string"
-        },
-        "part_name_4": {
-          "type": "string"
-        },
-        "part_number_5": {
-          "type": "string"
-        },
-        "part_name_5": {
-          "type": "string"
-        },
-        "part_number_6": {
-          "type": "string"
-        },
-        "part_name_6": {
-          "type": "string"
-        },
-        "part_number_7": {
-          "type": "string"
-        },
-        "part_name_7": {
-          "type": "string"
-        },
-        "part_number_8": {
-          "type": "string"
-        },
-        "part_name_8": {
-          "type": "string"
-        },
-        "part_number_9": {
-          "type": "string"
-        },
-        "part_name_9": {
-          "type": "string"
-        },
-        "templated_study": {
-          "type": "file"
-        },
-        "templated_study_dcm": {
-          "type": "array"
-        }
-      }
-    },
-    "ScheduleResponse": {
-      "type": "object",
-      "properties": {
-        "event": {
-          "type": "object",
-          "properties": {
-            "event_id": {
-              "type": "integer"
-            },
-            "universal_id": {
+      "properties":{
+        "devices":{
+          "type": "array",
+          "properties":{
+            "name":{
               "type": "string"
-            },
-            "start": {
+          },
+            "size":{
               "type": "string"
-            },
-            "end": {
-              "type": "string"
-            },
-            "case": {
-              "type": "string"
-            },
-            "procedure": {
-              "type": "string"
-            },
-            "orientation": {
-              "type": "string"
-            },
-            "details": {
-              "type": "string"
-            },
-            "status": {
-              "type": "string"
-            },
-            "laterality": {
-              "type": "string"
-            },
-            "location": {
-              "type": "object",
-              "properties": {
-                "ahaid": {
-                  "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                }
-              }
-            },
-            "physicians": {
-              "type": "object",
-              "properties": {
-                "npi": {
-                  "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                }
-              }
-            },
-            "reps": [],
-            "patient": {
-              "type": "object",
-              "properties": {
-                "initials": {
-                  "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                },
-                "mrn": {
-                  "type": "string"
-                },
-                "dob": {
-                  "type": "string"
-                },
-                "gender": {
-                  "type": "string"
-                }
-              }
-            },
-            "demographics": {
-              "type": "object",
-              "properties": {
-                "gender": {
-                  "type": "string"
-                },
-                "age": {
-                  "type": "integer"
-                },
-                "height": {
-                  "type": "number",
-                  "format": "double"
-                },
-                "weight": {
-                  "type": "integer"
-                }
-              }
-            },
-            "equipment": {
-              "type": "object",
-              "properties": {
-                "devices": {
-                  "type": "array",
-                  "properties": {
-                    "name": {
-                      "type": "string"
-                    }
-                  }
-                }
-              },
-              "planned": {
-                "type": "string"
-              },
-              "actual": {
-                "type": "string"
-              }
-            },
-            "templated": {
-              "type": "integer"
-            },
-            "study": []
+          },
+            "id":{
+              "type": "integer",
+              "format": "int64"
           }
-        }
+          }
+      }
       }
     }
+  }
   },
+  "ReceiveTemplatedStudy":{
+    "type": "object",
+    "properties":{
+      "appointment_id":{
+          "type": "integer",
+          "format": "int64"
+      },
+      "part_number_1":{
+        "type": "string"
+    },
+    "part_name_1":{
+      "type": "string"
+  },
+  "part_number_2":{
+    "type": "string"
+},
+"part_name_2":{
+  "type": "string"
+},
+"part_number_3":{
+  "type": "string"
+},
+"part_name_3":{
+"type": "string"
+},
+"part_number_4":{
+  "type": "string"
+},
+"part_name_4":{
+"type": "string"
+},
+"part_number_5":{
+  "type": "string"
+},
+"part_name_5":{
+"type": "string"
+},
+"part_number_6":{
+  "type": "string"
+},
+"part_name_6":{
+"type": "string"
+},
+"part_number_7":{
+  "type": "string"
+},
+"part_name_7":{
+"type": "string"
+},
+"part_number_8":{
+  "type": "string"
+},
+"part_name_8":{
+"type": "string"
+},
+"part_number_9":{
+  "type": "string"
+},
+"part_name_9":{
+"type": "string"
+}
+  
+  }
+  },
+  "ScheduleResponse":{
+    "type": "object",
+    "properties":{
+        "event":
+            {
+              "type": "object",
+            "properties":{
+                "event_id":{
+                  "type":"integer"
+                },
+                "universal_id":{
+                  "type":"string"
+                },
+                "start":{
+                  "type":"string"
+                },
+                "end":{
+                  "type":"string"
+                },
+                "case":{
+                  "type":"string"
+                },
+                "procedure":{
+                  "type":"string"
+                },
+                "orientation":{
+                  "type":"string"
+                },
+                "details":{
+                  "type":"string"
+                },
+                "status":{
+                  "type":"string"
+                },
+                "laterality":{
+                  "type":"string"
+                },
+                "location": {
+                  "type":"object",
+                  "properties":{
+                    "ahaid":{
+                      "type":"string"
+                    },
+                    "name":{
+                      "type":"string"
+                    }
+                  }   
+                },
+                "physicians":{
+                  "type":"object",
+                  "properties":{
+                        "npi":{
+                          "type":"string"
+                        },
+                        "name":{
+                          "type":"string"
+                        }
+                    }
+                  },
+                "reps": [],
+                "patient": {
+                  "type":"object",
+                  "properties":{
+                    
+                    "initials":{
+                      "type":"string"
+                    },
+                    "name":{
+                      "type":"string"
+                    },
+                    "mrn":{
+                      "type":"string"
+                    },
+                    "dob":{
+                      "type":"string"
+                    },"gender":{
+                      "type":"string"
+                    }
+                  }
+                },
+                "demographics": {
+                  "type":"object",
+                  "properties":{
+                    "gender":{
+                      "type":"string"
+                    },
+                    "age":{
+                      "type":"integer"
+                    },
+                    "height":{
+                      "type":"number",
+                      "format":"double"
+                    },
+                    "weight":{
+                      "type":"integer"
+                    }
+                  }
+                },
+                "equipment": {
+                  "type":"object",
+                  "properties":{
+                    "devices":{ 
+                    "type":"array",
+                    "properties":{
+                            "name":{
+                              "type":"string"
+                            }
+                        }
+                  }
+                  },
+                    "planned":{
+                      "type":"string"
+                    },
+                    "actual":{
+                      "type":"string"
+                    }
+                },
+                "templated":{
+                  "type":"integer"
+                },
+                "study": []
+            }
+          }
+  }
+  }
+        },
   "externalDocs": {
     "description": "Find out more about Swagger",
     "url": "http://swagger.io"
