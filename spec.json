@@ -390,7 +390,8 @@
           "type": "file"
         },
         "templated_study_dcm": {
-          "type": "array"
+          "description": "Array of dicom files",
+          "type": "file"
         }
       }
     },
